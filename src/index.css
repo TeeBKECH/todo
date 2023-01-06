@@ -1,13 +1,119 @@
-body {
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html,
+body {
+  font-size: 16px;
+  color: #e9e9e9;
+  background: #222222;
+  font-family: Roboto, sans-serif;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+.app {
+  padding: 30px 20px 50px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.todo-item {
+  padding: 10px;
+  border-radius: 5px;
+  background: #1b1b1b;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.todo-item input:checked + h3 {
+  text-decoration: line-through;
+  color: #7c7c7c;
+}
+
+.todo-remove {
+  background: transparent;
+  color: #ff2929;
+  font-size: 25px;
+  width: 30px;
+  height: 30px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 50%;
+  outline: none;
+  border: 1px solid #ff2929;
+  cursor: pointer;
+  transition: all 0.2s linear;
+  margin-left: auto;
+}
+
+.todo-remove:hover {
+  transform: rotate(90deg);
+}
+
+.todo-add {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.todo-add input {
+  border-radius: 5px;
+  background: #4b4b4b;
+  border: 1px solid #6e6e6e;
+  padding: 5px 5px 5px 10px;
+  outline: none;
+  color: #fff;
+  height: 40px;
+  font-size: 18px;
+  width: 100%;
+}
+
+.todo-add input::placeholder {
+  color: #b9b9b9;
+}
+
+.todo-add button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 5px 10px;
+  background: #313131;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.todo-add button img {
+  width: 20px;
+  height: 20px;
+  filter: invert();
+}
+
+.todo-add button:hover {
+  background: #1d1d1d;
+  color: #dbdbdb;
 }
